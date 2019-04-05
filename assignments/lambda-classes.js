@@ -32,6 +32,16 @@ class Instructor extends Person {
 	grade(student, subject) {
 		console.log(`${student.name} receives a perfect score on ${subject}`)
 	}
+	score(studentGrade) {
+		var totalScore = studentGrade + ((Math.random() * 201) - 100);
+		console.log(totalScore);
+		if (totalScore >= 70) {
+			console.log(`You pass! Congragulations!`)
+		}
+		else {
+			console.log(`You fail. Try again.`)
+		}
+	}
 }
 
 class Student extends Person {
@@ -40,6 +50,7 @@ class Student extends Person {
 		this.previousBackground = stuAttrs.previousBackground;
 		this.className = stuAttrs.className;
 		this.favSubjects = stuAttrs.favSubjects;
+		this.grade = Math.floor(Math.random() * 101);
 		
 	}
 	
@@ -122,6 +133,14 @@ ronald.debugsCode(ben, 'JavaScript')
 console.log(ben)
 console.log(cam)
 console.log(ronald)
+
+// stretch
+
+console.log(ben.grade)
+
+ronald.score(ben.grade)
+
+
 
 
 
